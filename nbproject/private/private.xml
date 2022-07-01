@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/src/java/database/userdb.sql</file>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/src/java/dataaccess/RoleDB.java</file>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/web/WEB-INF/users.jsp</file>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/src/java/servlets/UserServlet.java</file>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/src/java/services/UserService.java</file>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/src/java/dataaccess/UserDB.java</file>
+            <file>file:/C:/Users/Haywo/CPRG352/labs/Lab7_JDBC/src/java/services/RoleService.java</file>
+        </group>
+    </open-files>
+</project-private>
