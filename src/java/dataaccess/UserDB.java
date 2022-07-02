@@ -7,16 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import models.User;
 
-public class UserDB{
-     public List<User> getAll() throws Exception {
+public class UserDB {
+
+    public List<User> getAll() throws Exception {
         List<User> users = new ArrayList<>();
         ConnectionPool cp = ConnectionPool.getInstance();
         Connection con = cp.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        
+
         String sql = "SELECT * FROM user";
-        
+
         try {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -38,8 +39,8 @@ public class UserDB{
 
         return users;
     }
-     
-       public User get(String email) throws Exception {
+
+    public User get(String email) throws Exception {
         User user = null;
         //get the connection pool
         ConnectionPool cp = ConnectionPool.getInstance();
@@ -47,9 +48,9 @@ public class UserDB{
         Connection con = cp.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        
+
         String sql = "SELECT * FROM user WHERE email=?";
-        
+
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, email);
@@ -67,16 +68,16 @@ public class UserDB{
             DBUtil.closePreparedStatement(ps);
             cp.freeConnection(con);
         }
-        
+
         return user;
     }
-       
-        public void insert(User user) throws Exception {
+
+    public void insert(User user) throws Exception {
         ConnectionPool cp = ConnectionPool.getInstance();
         Connection con = cp.getConnection();
         PreparedStatement ps = null;
         String sql = "INSERT INTO user VALUES (?, ?, ?, ?, ?, ?)";
-        
+
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, user.getEmail());
@@ -91,13 +92,13 @@ public class UserDB{
             cp.freeConnection(con);
         }
     }
-        
-        public void update(User user) throws Exception {
+
+    public void update(User user) throws Exception {
         ConnectionPool cp = ConnectionPool.getInstance();
         Connection con = cp.getConnection();
         PreparedStatement ps = null;
         String sql = "UPDATE user SET active=?, first_name=?, last_name=?, password=?, role=? WHERE email=?";
-        
+
         try {
             ps = con.prepareStatement(sql);
             ps.setBoolean(1, user.isActive());
@@ -112,13 +113,13 @@ public class UserDB{
             cp.freeConnection(con);
         }
     }
-        
-        public void delete(User user) throws Exception {
+
+    public void delete(User user) throws Exception {
         ConnectionPool cp = ConnectionPool.getInstance();
         Connection con = cp.getConnection();
         PreparedStatement ps = null;
         String sql = "DELETE FROM user WHERE email=?";
-        
+
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, user.getEmail());
